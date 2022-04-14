@@ -14,7 +14,7 @@ function binarytree.new(number)
 end
 
 function binarytree.from_list(list)
-    local tree = {binarytree.new(list[1])}
+    local tree = binarytree.new(list[1])
 
     for index = 2, #list do
         tree:insert(list[index])
