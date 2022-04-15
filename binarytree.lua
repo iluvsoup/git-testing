@@ -36,12 +36,12 @@ function binarytree:insert(number)
 end
 
 function binarytree:invert()
-    if not self.left and not self.right then return end
+    if self.left and self.right then
+        self.left, self.right = self.right, self.left
 
-    self.left, self.right = self.right, self.left
-
-    self.left:invert()
-    self.right:invert()
+        self.left:invert()
+        self.right:invert()
+    end
 end
 
 return binarytree
